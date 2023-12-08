@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El ahorcado - Login</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="Header">       
+            <h1 class="display-4 fw-bold lh-1 text-body-emphasis text-center">El Ahorcado</h1>
+            <p class="fs-6 text-center">by Karmel Idarraga para DWEC03</p>        
+        </div>
+        <div class="main p-3 mx-5 rounded-2 bg-body-secondary">
+            <div class="usuario">
+                <div class="row">
+                    <span id="bienvenida" class="col-8">Ongi etorri </span>
+                    <span id="puntos" class="col-4 fw-bold">Puntuación: 0</span>
+                </div>
+                <div class="row pt-2">
+                    <label for="level" class="col-1 pt-2">Dificultad: </label>
+                    <div class="col-2">
+                        <select class="form-select" aria-label="Default select example" id="level" onchange="ajustarNivel(this.value)">
+                            <option value="6" selected>Muy fácil</option>
+                            <option value="7">Fácil</option>
+                            <option value="8">Normal</option>
+                            <option value="9">Dificil</option>
+                            <option value="10">Muy dificil</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="topPlayers">
+                <h2>Top Players</h2>
+                <ul id="clasificacion"></ul>
+            </div>
+            <div class="palabra">
+                <div class="row">
+                    <h2>Adivina la palabra</h2>
+                </div>
+                <div class="row">
+                    <span id="adivina" class="display-2"></span>
+                </div>            
+            </div>
+            <div class="fallos">
+                <div class="row">
+                    <div id="tablero"></div>
+                </div>
+            </div>        
+            <div class="ahorcado">
+                <picture>
+                    <img src="/img/ahorcado_7.png" alt="Fallos restantes: 7" class="rounded mx-auto d-block" id="image-ahorcado">
+                </picture>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Fin de partida</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Sí</button>
+            </div>
+        </div>
+        </div>
+    </div>
+  
+  <script src="/js/lib/jquery-3.7.1.js"></script>
+  <script src="/model/Puntuacion.js"></script>
+  <script src="/js/juego.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

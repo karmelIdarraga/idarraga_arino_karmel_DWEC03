@@ -1,0 +1,74 @@
+.alert-dismissible .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.75rem 1.25rem;
+    color: inherit;
+}
+
+button.close {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+}
+
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+
+.contenedor {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.6fr 2.2fr 0.2fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Header Header Header"
+      "main main main"
+      "footer footer footer";
+  }
+  
+  .Header { grid-area: Header; }
+  
+  .main {  display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    grid-template-rows: 0.9fr 1.6fr 0.5fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "usuario topPlayers"
+      "palabra ahorcado"
+      "fallos .";
+    grid-area: main;
+  }
+  
+  .palabra { grid-area: palabra; }
+  
+  .fallos { grid-area: fallos; }
+  
+  .usuario { grid-area: usuario; }
+  
+  .topPlayers { grid-area: topPlayers; }
+  
+  .ahorcado { grid-area: ahorcado; }
+  
+  .footer { grid-area: footer; background-color: black; margin-top: 0.5%; }
+
+  span#adivina {
+    margin: 0 auto 25px auto;
+    text-align: center;
+    color: royalblue;
+    text-transform: uppercase;
+    letter-spacing: 9px;
+  }  
+
+  .ahorcado img{
+    background-color: white;
+    width: 50%;
+  }
+  
