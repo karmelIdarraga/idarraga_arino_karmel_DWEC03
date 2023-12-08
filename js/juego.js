@@ -164,6 +164,7 @@ $('.btn-secondary').on('click', function(){
     //Salir del juego
     guardarPuntuación();
     localStorage.removeItem("logueado");
+    window.location.href='/index.html';
 
 });
 
