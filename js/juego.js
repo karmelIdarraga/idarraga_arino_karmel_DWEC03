@@ -134,10 +134,17 @@ $('.btn-primary').on('click', function(){
         guardarPuntuación();
         fallos_rest = 7;
         puntos = 0;
-        document.getElementById("image-ahorcado").src = "/img/ahorcado_" + fallos_rest+".png";
-       
+        document.getElementById("image-ahorcado").src = "/img/ahorcado_" + fallos_rest+".png";       
     }
     iniciar();
+});
+
+$('.btn-secondary').on('click', function(){
+    //Salir del juego
+    guardarPuntuación();
+    localStorage.removeItem("logueado");
+    window.location.href='/index.html';
+
 });
 
 function guardarPuntuación(){
@@ -154,19 +161,18 @@ function actualizarClasificacion(){
     $('#clasificacion').empty();
     if (topscores != null){
         topscores = topscores.sort((a,b) => b.puntos - a.puntos);
-        for (i=0; i < topscores.length; i++) {
+        // Cargamos solamente el top 5
+        let limiteScores = 5;
+        if (topscores.length < limiteScores) {
+            limiteScores = topscores.length;
+        }
+        for (i=0; i < limiteScores; i++) {
             $('#clasificacion').append('<li>' + topscores[i].usuario + ':     ' + topscores[i].puntos);
         }
     }    
 }
 
-$('.btn-secondary').on('click', function(){
-    //Salir del juego
-    guardarPuntuación();
-    localStorage.removeItem("logueado");
-    window.location.href='/index.html';
 
-});
 
 function iniciar(){
     let nivel = $('#level').val();
